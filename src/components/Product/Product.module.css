@@ -1,0 +1,27 @@
+.product {
+    flex-basis: 60%;
+    padding-left: 15%;
+    margin-top: 30px
+}
+.singleProduct {
+    display: flex;
+    column-gap: 20px;
+    border-bottom: 1px solid rgb(192, 192, 192);
+    border-right: 1px solid rgb(192, 192, 192);
+    padding: 10px 0;
+}
+.singleProduct > div:nth-child(2)>div:first-child {
+    margin-top: 50px;
+}
+.prodcutName h2 {
+    color: blue
+}
+button {
+    background-color: #F0C14B;
+    border: 1px solid rgb(26, 26, 26);
+    padding: 5px 30px;
+    border-radius: 5px;
+}
+.rating {
+    color: #ffbd00
+}

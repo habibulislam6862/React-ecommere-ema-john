@@ -1,0 +1,29 @@
+.searchContainer {
+    display: flex;
+    justify-content: center;
+    background-color: rgb(48, 48, 48);
+    padding: 15px;
+    align-items: center;
+    column-gap: 8px;
+    position: absolute;
+    width: 100%;
+    
+}
+
+.searchContainer>input[type="text"] {
+    width: 70%;
+    height: 20px;
+    border: none;
+    font-size: 25px;
+    outline: none;
+    padding: 5px
+}
+.searchContainer>svg {
+    color: white;
+    font-size: 22px;
+}
+.cartCount {
+    font-size: 25px;
+    font-weight: bold;
+    color: tomato
+}
