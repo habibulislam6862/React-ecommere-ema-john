@@ -1,0 +1,22 @@
+.orderReview {
+    display: flex;
+}
+.orderReview > div:first-child {
+    margin-left: 200px;
+    flex-basis: 50%;
+}
+
+.orderReview > div:last-child {
+    margin-top: 0;
+}
+.CartItems h4{
+    color: blue
+}
+.singleCartItem > span {
+    display: block;
+    line-height: 30px;
+}
+.price {
+    color: rgb(131, 0, 0);
+    font-weight: 700;
+}

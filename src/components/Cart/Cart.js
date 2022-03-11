@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import styles from './Cart.module.css';
+import _ from 'lodash';
 
 class Cart extends Component {
 
@@ -7,21 +8,39 @@ class Cart extends Component {
 
     render() {
 
-        const {cartProducts, shippingCost} = this.props;
-        const totalPrice = Math.round(cartProducts.reduce((total, prev)=> total + prev.price, 0));
-        const tax = Math.round(totalPrice * 0.15);
-        const total = totalPrice + shippingCost + tax;
+        const {cartProducts, shippingCost, productCounter, placeOrder} = this.props;
+       
+        const totalItemArray = Object.values(productCounter);
 
-        // shipping price will be add 5 + 5 + 5 for each order, but can't cross 20 dollar. 
+        const totalItem = _.sum(totalItemArray);
+
+        const allAddedKeys = Object.keys(productCounter);
+
+        let totalPrice = 0;
+        cartProducts.forEach(product => {
+            allAddedKeys.forEach( key => {
+                if(product.key === key) {
+                    totalPrice += _.multiply(productCounter[key], product.price);
+                }
+            })
+        });
+
+        totalPrice = _.round(totalPrice, 2)
+         
         // tax will be the 15% of Total Price;
+        const tax = _.round(_.multiply(totalPrice, 0.15), 2);
+
+        const totalOrder = _.round((totalPrice + shippingCost + tax), 2)
+
         return (
             <div className={styles.cart}>
                <h2>Order Summary</h2>
-               <div>Item Ordered: {cartProducts.length}</div>
+               <div>Item Ordered: {totalItem}</div>
                <div>Total Price: ${totalPrice}</div>
                <div>Shipping Price: ${shippingCost}</div>
                <div>Tax: ${tax}</div>
-               <h3>Order Total: ${total}</h3>
+               <h3>Order Total: ${totalOrder}</h3>
+               <button onClick={placeOrder}>Place Order</button>
             </div>
         );
     }

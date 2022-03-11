@@ -1,4 +1,5 @@
-import React, { Component } from 'react';
+import { Component } from 'react';
+import { NavLink } from 'react-router-dom';
 import logo from '../../images/logo.png';
 import styles from "./Header.module.css";
 
@@ -11,9 +12,9 @@ class Header extends Component {
             </div>
             <nav>
                 <ul>
-                    <li><a href="http://google.com">Shop</a></li>
-                    <li><a href="http://google.com">Order review</a></li>
-                    <li><a href="http://google.com">Manage inventory here</a></li>
+                    <li><NavLink to="/">Shop</NavLink></li>
+                    <li><NavLink to="/order-review">Order review</NavLink></li>
+                    <li><NavLink to="/manage">Manage inventory here</NavLink></li>
                 </ul>
             </nav>
             

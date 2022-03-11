@@ -1,25 +1,17 @@
 import React from 'react';
-import Header from './components/Header/Header';
-import Products from './components/Products/Products';
+import { Route, Routes } from 'react-router-dom';
+import Manage from './components/Manage/Manage';
+import OrderReview from './components/OrderReview/OrderReview';
+import Shop from './components/Shop/Shop';
 
 class App extends React.Component {
-
-
-  
- 
-
   render(){
-
-
-    
     return(
-      <>
-      
-      <Header/>
-      <Products  getCartData={this.getCartData}/>
-      
-      
-      </>
+      <Routes>
+        <Route path="/" element={<Shop  getCartData={this.getCartData}/>}/>
+        <Route path="/order-review" element={<OrderReview/>} />
+        <Route path="/manage" element={<Manage/>} />
+      </Routes>
     )
   }
 }
