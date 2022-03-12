@@ -8,8 +8,8 @@ class Cart extends Component {
 
     render() {
 
-        const {cartProducts, shippingCost, productCounter, placeOrder} = this.props;
-       
+        const {cartProducts, shippingCost, productCounter, placeOrder, children} = this.props;
+        
         const totalItemArray = Object.values(productCounter);
 
         const totalItem = _.sum(totalItemArray);
@@ -40,7 +40,7 @@ class Cart extends Component {
                <div>Shipping Price: ${shippingCost}</div>
                <div>Tax: ${tax}</div>
                <h3>Order Total: ${totalOrder}</h3>
-               <button onClick={placeOrder}>Place Order</button>
+               {children}
             </div>
         );
     }

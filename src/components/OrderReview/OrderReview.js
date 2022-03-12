@@ -44,7 +44,9 @@ class OrderReview extends Component {
                                 placeOrder={placeOrder} 
                                 productCounter={productCounter}  
                                 shippingCost={shippingCost} 
-                                cartProducts={cartProduct}/> 
+                                cartProducts={cartProduct}> 
+                                    <button onClick={placeOrder}>Place Order</button>
+                                </Cart> 
                                 </>
                             ) : <img src={congrats} alt="Congratulation" /> 
                         }}
