@@ -8,7 +8,7 @@ import _ from 'lodash'
 class Search extends Component {
    
     render() {
-        const items = Object.values(getStorageData("product_counter"));
+        const items = _.isEmpty(getStorageData("product_counter")) ? [] : Object.values(getStorageData("product_counter"));
         const totalItem = _.sum(items);
 
         const {handleSearch} = this.props;

@@ -17,11 +17,10 @@ class Product extends Component {
         }
         this.handleSearch = this.handleSearch.bind(this);
     }
-    
 
 
     componentDidMount(){
-        fetch("./products.JSON")
+        fetch("./products.json")
         .then(res => res.json())
         .then(data => {
             
@@ -30,9 +29,7 @@ class Product extends Component {
         
         });
 
-       
     }
-
 
     handleSearch(event){
         const {products, searchText} = this.state;

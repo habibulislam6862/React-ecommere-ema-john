@@ -4,11 +4,9 @@ import _ from 'lodash';
 
 class Cart extends Component {
 
-    
-
     render() {
 
-        const {cartProducts, shippingCost, productCounter, placeOrder, children} = this.props;
+        const {cartProducts, shippingCost, productCounter, children} = this.props;
         
         const totalItemArray = Object.values(productCounter);
 
